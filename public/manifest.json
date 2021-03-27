@@ -1,0 +1,41 @@
+{
+    "name": "Chrome Extension + ReactJS",
+    "description": "Chrome Extension + ReactJS with popup.html and content.html",
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "64": "icon64.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "icon128.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "static/js/background.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [
+                "static/css/content.css"
+            ],
+            "js": [
+                "static/js/content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "static/css/content.css"
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
